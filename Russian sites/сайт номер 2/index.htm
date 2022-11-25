@@ -1,0 +1,167 @@
+﻿<head>
+    <script src="static\rythm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="static\s.css">
+    <link rel="shortcut icon" type="image/x-icon" href="static\ВАШЕ ФОТО.ico">
+</head>
+
+<body>
+    <audio id="bgm" src="static\bb.mp3" loop="">
+
+    </audio>
+    <div id="particles-js"></div>
+    <div class="main center">
+        <div style="font-size: 40px;" class="logo-blur logo-bass"><span class="logo-neon">ВАШЕ НАЗВАНИЕ</span></div>
+    </div>
+    <div class="controls">
+        <a href="login.html">КУДА БУДЕТ ПЕРЕКИДОВАТЬ</a>
+        <a href="register.html">КУДА БУДЕТ ПЕРЕКИДОВАТЬ</a>
+    </div>
+    <div class="overlay">
+        <div class="center">
+            press anywhere to enter
+        </div>
+    </div>
+    <script>
+        var rythm;
+        var initialized = false;
+
+        var init_rythm = () => {
+            rythm = new Rythm();
+            rythm.addRythm('logo-bass', 'pulse', 0, 7);
+            rythm.addRythm('logo-neon', 'textNeon', 80, 150, {
+                to: [32, 17, 130],
+                from: [132, 117, 230]
+            });
+
+            rythm.addRythm('logo-blur', 'blur', 80, 150, {
+                min: 0,
+                max: 4
+            });
+        };
+        bgm.volume = 0.4;
+        var play = () => {
+            if (initialized)
+                return;
+            bgm.play().then(() => {
+                init_rythm();
+                rythm.connectExternalAudioElement(bgm);
+                rythm.start();
+                $(".overlay").addClass("hidden");
+                initialized = true;
+            });
+        };
+        play();
+
+        window.onclick = () => {
+            play();
+        }
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 160,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 1,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 4,
+                        "size_min": 0.3,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 600
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 250,
+                        "size": 0,
+                        "duration": 2,
+                        "opacity": 0,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 400,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>

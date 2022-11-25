@@ -1,0 +1,410 @@
+body {
+    background: rgb(20, 20, 26);
+    color: rgb(180, 180, 180);
+    background-size: cover;
+    font-family: 'Segoe UI', monospace;
+}
+
+.main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50.2%);
+    /* ghetto fix */
+    text-align: center;
+    text-decoration: none;
+}
+
+.main a, .main span.category {
+    color: rgb(155, 138, 228);
+}
+
+.main pre {
+    font-size: 25px;
+    background: linear-gradient(to bottom, magenta, darkblue);
+    background-size: 100% 92%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    user-select: none;
+}
+
+.main input {
+    display: block;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+    width: 80%;
+    min-height: 250px;
+}
+
+.main input[type="text"], .main input[type="password"] {
+    font-family: 'Segoe UI', monospace;
+    background: rgb(20, 20, 26);
+    border: 1px solid rgb(37, 37, 44);
+    transition: 200ms ease;
+    padding: 10px;
+    margin: 15px;
+    width: 350px;
+    color: white;
+    outline: 0;
+    border-radius: 4px;
+}
+
+.main input[type="text"]:hover, .main input[type="password"]:hover {
+    background: rgb(25, 25, 31);
+    transition: 200ms ease;
+}
+
+.main input[type="submit"] {
+    border-radius: 4px;
+    font-family: 'Segoe UI', monospace;
+    background: rgb(20, 20, 26);
+    border: 1px solid rgb(37, 37, 44);
+    transition: 200ms ease;
+    padding: 10px;
+    margin: 15px;
+    width: 350px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    outline: 0;
+}
+
+.main input[type="submit"]:hover {
+    border-radius: 4px;
+    font-family: 'Segoe UI', monospace;
+    background: rgb(25, 25, 31);
+    border: 1px solid rgb(37, 37, 44);
+    transition: 200ms ease;
+    padding: 10px;
+    margin: 15px;
+    width: 350px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    outline: 0;
+}
+
+.info {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 240px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: -69;
+}
+
+.info a {
+    display: block;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user-controls {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a[href^="#"], a[href^="h"], a[href^="/"] {
+    color: rgb(150, 150, 150);
+    transition: 200ms ease;
+    text-decoration: none;
+}
+
+a[href^="#"]:hover, a[href^="h"]:hover, a[href^="/"]:hover {
+    color: rgb(215, 215, 215);
+    transition: 200ms ease;
+}
+
+.loading {
+    background: black;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    text-align: center;
+}
+
+.loading .border {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 8px;
+}
+
+.loading .border .loader {
+    position: relative;
+    top: 100%;
+    background: rgb(37, 37, 44);
+    width: 0%;
+}
+
+.fadeout {
+    transition: 1s ease;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.panel-card {
+    position: relative;
+    width: 650px;
+    display: block;
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgb(29, 29, 36);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+}
+
+.panel-card .separator {
+    width: 50%;
+    float: left;
+}
+
+.panel-card .inner {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-top: 2px solid rgb(37, 37, 43);
+    border-bottom: 2px solid rgb(37, 37, 43);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-card .header {
+    height: 0px;
+}
+
+.panel-card .header span {
+    position: relative;
+    bottom: 33px;
+}
+
+select {
+    background: rgb(29, 29, 36);
+    outline: 0;
+    border-color: rgb(155, 138, 228);
+    outline-color: rgb(155, 138, 228);
+    color: rgb(180, 180, 180);
+    width: 150px;
+}
+
+.question {
+    padding: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    margin: 15px;
+    text-align: left;
+    user-select: none;
+    border-radius: 8px;
+}
+
+.question span {
+    display: block;
+}
+
+.question .answer {
+    display: none;
+}
+
+.question.open {
+    border: 2px solid rgb(155, 138, 228);
+}
+
+.question.open .answer {
+    margin-top: 10px;
+    display: block;
+}
+
+.modal.shown {
+    visibility: visible;
+    top: 50%;
+    transition: 0.6s ease;
+    z-index: 999999;
+    border-radius: 8px;
+}
+
+.modal-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.modal-overlay.shown {
+    transition: 0.6s ease;
+    opacity: 0.85;
+    pointer-events: all;
+}
+
+.modal {
+    position: absolute;
+    width: 500px;
+    top: -500px;
+    min-height: 200px;
+    visibility: hidden;
+    left: 50%;
+    border: 1px solid rgb(37, 37, 43);
+    background: rgb(20, 20, 26);
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}
+
+.modal.shown {
+    visibility: visible;
+    top: 50%;
+    transition: 0.6s ease;
+    z-index: 999999;
+}
+
+.modal-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.modal-overlay.shown {
+    transition: 0.6s ease;
+    opacity: 0.85;
+    pointer-events: all;
+}
+
+.invites {
+    overflow-x: hidden;
+}
+
+.toast {
+    background-color: rgb(49, 55, 66) !important;
+    box-shadow: none !important;
+    border-radius: 4px;
+}
+
+.toast-error {
+    border: 2px solid rgb(129, 122, 230);
+}
+
+.toast-success {
+    border: 2px solid rgb(129, 122, 230);
+}
+
+.stats {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+* {
+    /* lol */
+    scrollbar-width: thin;
+    scrollbar-color: rgb(132, 117, 230);
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(132, 117, 230);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(89, 80, 153);
+}
+
+.comments {
+    text-align: left;
+}
+
+.comment {
+    border-bottom: solid 2px rgb(38, 38, 44);
+}
+
+.comment .author {
+    margin-left: 5px;
+    display: block;
+}
+
+#comment-hyper {
+    margin-left: 7px;
+}
+
+.comment .contents {
+    margin-left: 9px;
+    padding: 3px;
+    word-wrap: break-word;
+}
+
+.leave-comment input[type="text"] {
+    display: inline-block;
+    margin: 1px;
+    padding: 1px;
+}
+
+.leave-comment button {
+    position: relative;
+    height: 22px;
+    border-radius: 4px;
+    font-family: 'Segoe UI', monospace;
+    background: rgb(25, 25, 31);
+    color: rgb(180, 180, 180);
+    border: 1px solid rgb(37, 37, 44);
+    transition: 200ms ease;
+    cursor: pointer;
+    text-align: center;
+    outline: 0;
+}
+
+.leave-comment form {
+    display: none;
+}
+
+.leave-comment.shown form {
+    display: block;
+}
+
+.leave-comment form {
+    margin-block-end: 0;
+}
+
+.card-header {
+    background: rgb(29, 29, 36);
+    width: 100%;
+    height: 0px;
+    margin-bottom: 6px;
+}
+
+.card-header .nigger {
+    display: none;
+}
