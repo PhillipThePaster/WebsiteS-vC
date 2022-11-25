@@ -1,0 +1,75 @@
+/*======================== Desktop and Loptop and Other Tablet 768<px========================*/
+@media (min-width: 768px) {
+	#textslider {
+		margin:1rem 0;
+	}
+}
+/*======================== Tablet 768>px ========================*/
+@media (max-width: 768px) {
+	html {
+        font-size: 100%;
+    }
+	#textslider {
+		margin:1rem 0;
+	}
+}
+/*======================== Phone 640>px ========================*/
+@media (max-width: 640px) {
+	html {
+        font-size: 60%;
+    }
+	p{
+		font-size: 90%;
+	}
+	h1,h2,h3,h4,h5 {
+		font-size: 190%;
+	}
+	#textslider {
+		height: 160px !important;
+	}
+}
+/*======================== Phone 480>px ========================*/
+@media (max-width: 480px) {
+	html {
+        font-size: 60%;
+    }
+	p{
+		font-size: 90%;
+	}
+	h1,h2,h3,h4,h5 {
+		font-size: 190%;
+	}
+	#textslider {
+		height: 120px !important;
+	}
+}
+/*======================== Phone 360>px ========================*/
+@media (max-width: 360px) {
+	html {
+        font-size: 60%;
+    }
+	p{
+		font-size: 90%;
+	}
+	h1,h2,h3,h4,h5 {
+		font-size: 190%;
+	}
+	#textslider {
+		height: 250px !important;
+	}
+}
+/*======================== Phone 320>px ========================*/
+@media (max-width: 320px) {
+	html {
+        font-size: 60%;
+    }
+	p{
+		font-size: 90%;
+	}
+	h1,h2,h3,h4,h5 {
+		font-size: 190%;
+	}
+	#textslider {
+		height: 250px !important;
+	}
+}

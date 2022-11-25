@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="media/weeb.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+                var msg  = document.title ="Edgy Title";
+                var speed = 150;
+                var endChar = " ";
+                var pos = 0;
+
+                function moveTitle()
+                {
+                     var ml = msg.length;
+
+                    title = msg.substr(pos,ml) + endChar + msg.substr(0,pos);
+                  document.title = title;
+
+                  pos++;
+                  if (pos > ml) pos=0;
+                  window.setTimeout("moveTitle()",speed);
+                }
+
+                moveTitle();
+            </script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body onload="startTime()">
+<div id="txt"></div>
+<body>
+<div class="background-wrap">
+<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop">
+<source src="media/video.mp4" type="video/mp4">
+<source src="media/video.ogg" type="video/ogg">
+Video not supported
+</video>
+</div>
+<div class="content">
+<h1>Title</h1>
+<p>Subtitle</p>
+<p><a href="https://github.com/PhillipThePaster" target="blank_" style="color: #00F555">Edgy Link here</a></p>
+</div>
+<script language="JavaScript">
+            var vid = document.getElementById("video-bg-elem");
+            vid.volume = 0.1;
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+</body>
+
+</html>
